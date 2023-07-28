@@ -30,7 +30,7 @@ export async function generate(file: string | typeof process.stdin, options: Ope
 
   function addEnum(title: string, values: string[]) {
     const definition = `export enum ${title}Enum {
-  ${values.map((e) => `${e} = '${e}'`).join(',\n  ')}
+  ${values.map((e) => `"${e}" = "${e}"`).join(',\n  ')}
 }
 `;
     if (enumsByName[title] && enumsByName[title] !== definition) {
