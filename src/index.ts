@@ -2,7 +2,11 @@
 import type { OpenAPITSOptions } from 'openapi-typescript';
 
 function getEnumTitle(path: string) {
-  const parts = path.match(/\/([^/]+)(?=\/parameters\/|$)/g)?.map((p) => p.slice(1)) ?? [];
+  const parts =
+    path
+      .replace(/[^A-Za-z0-9/]/g, '/')
+      .match(/\/([^/]+)(?=\/parameters\/|$)/g)
+      ?.map((p) => p.slice(1)) ?? [];
   return `${parts.map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join('')}`;
 }
 
@@ -11,7 +15,7 @@ interface ComponentWithProps {
 }
 
 export async function generate(file: string | typeof process.stdin, options: OpenAPITSOptions) {
-  const enums: string[] = [];
+  const enumsByName: Record<string, string> = {};
   const visitedEnums: Record<string, string[]> = {};
 
   function collectEnumerations(prefix: string, properties: ComponentWithProps['properties']) {
@@ -29,7 +33,10 @@ export async function generate(file: string | typeof process.stdin, options: Ope
   ${values.map((e) => `${e} = '${e}'`).join(',\n  ')}
 }
 `;
-    enums.push(definition);
+    if (enumsByName[title] && enumsByName[title] !== definition) {
+      throw new Error(`Enum ${title} already exists with different values`);
+    }
+    enumsByName[title] = definition;
   }
 
   const finalOptions: OpenAPITSOptions = {
@@ -75,5 +82,5 @@ export async function generate(file: string | typeof process.stdin, options: Ope
 
   const { default: openApiTs } = await import('openapi-typescript');
   const basicOutput = await openApiTs(file, finalOptions);
-  return [basicOutput, ...enums].join('\n');
+  return [basicOutput, ...Object.values(enumsByName)].join('\n');
 }
