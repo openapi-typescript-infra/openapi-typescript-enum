@@ -11,8 +11,6 @@ interface ComponentWithProps {
 }
 
 export async function generate(file: string | typeof process.stdin, options: OpenAPITSOptions) {
-  const { default: openApiTs } = await import('openapi-typescript');
-
   const enums: string[] = [];
   const visitedEnums: Record<string, string[]> = {};
 
@@ -34,7 +32,7 @@ export async function generate(file: string | typeof process.stdin, options: Ope
     enums.push(definition);
   }
 
-  const basicOutput = await openApiTs(file, {
+  const finalOptions: OpenAPITSOptions = {
     ...options,
     transform(schemaObject, metadata) {
       // There are two places where we look for enums. Path handlers, and components.
@@ -73,7 +71,9 @@ export async function generate(file: string | typeof process.stdin, options: Ope
       }
       return undefined;
     },
-  });
+  };
 
+  const { default: openApiTs } = await import('openapi-typescript');
+  const basicOutput = await openApiTs(file, finalOptions);
   return [basicOutput, ...enums].join('\n');
 }
