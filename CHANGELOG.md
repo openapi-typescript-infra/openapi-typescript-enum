@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.0.1...v1.1.0) (2023-07-28)
+
+
+### Features
+
+* **naming:** Handle special characters in name and dedupe ([9d3eba5](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/9d3eba58cb882dd3f4feddc5a57d819d82720e39))
+
 ## [1.0.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.0.0...v1.0.1) (2023-07-28)
 
 
