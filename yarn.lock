@@ -556,10 +556,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@openapi-typescript-infra/coconfig@npm:^3.3.2":
-  version: 3.3.2
-  resolution: "@openapi-typescript-infra/coconfig@npm:3.3.2"
-  checksum: 2392da9e11a9ee1bcf9e0b21773b5f051828cb9391fcf27129641a067006e43b977f0c68aa0da3c26e53209df35eb0f796ec7e3b75d8d7a249ed2a7cfcd215e4
+"@openapi-typescript-infra/coconfig@npm:^3.3.3":
+  version: 3.3.3
+  resolution: "@openapi-typescript-infra/coconfig@npm:3.3.3"
+  checksum: db34b0540c6c3f59bf0280cc04457f325f95605ab437bc113972ee00c4811fcf85f4afb084de4f3bf891e2f22abcb50081cb330bcaa2dd137b3910344d7ec87d
   languageName: node
   linkType: hard
 
@@ -569,7 +569,7 @@ __metadata:
   dependencies:
     "@commitlint/cli": ^17.6.7
     "@commitlint/config-conventional": ^17.6.7
-    "@openapi-typescript-infra/coconfig": ^3.3.2
+    "@openapi-typescript-infra/coconfig": ^3.3.3
     "@semantic-release/changelog": ^6.0.3
     "@semantic-release/git": ^10.0.1
     "@types/yargs-parser": ^21.0.0
