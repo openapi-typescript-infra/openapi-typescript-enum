@@ -588,7 +588,7 @@ __metadata:
     vitest: ^0.33.0
     yargs-parser: ^21.1.1
   bin:
-    openapi-typescript-enum: build/bin/openapi-typescript-enum.js
+    openapi-typescript-enum: build/bin/index.js
   languageName: unknown
   linkType: soft
 
