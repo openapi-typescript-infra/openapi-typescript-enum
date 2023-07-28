@@ -1,3 +1,11 @@
+## [1.0.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.0.0...v1.0.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **bin:** update bin path for npx usage ([faf50c1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/faf50c1167c02354fe7229ebba2084dd96a3f752))
+* **yarn:** update lockfile ([7b14863](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/7b148639493fe67f133356318490a920cc588ffb))
+
 # 1.0.0 (2023-07-28)
 
 
