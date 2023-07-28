@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.1.0...v1.1.1) (2023-07-28)
+
+
+### Bug Fixes
+
+* **tests:** update snapshot handling for tests ([512302d](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/512302d2ad5483063ad19c8085c2c967ef93c185))
+* **ts:** use quotes for enums ([1086387](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/1086387738883bc81a54aca3447377ce9ca690db))
+
 # [1.1.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.0.1...v1.1.0) (2023-07-28)
 
 
