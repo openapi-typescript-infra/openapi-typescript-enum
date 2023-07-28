@@ -1,4 +1,3 @@
-import fs from 'fs';
 import path from 'path';
 
 import { expect, test } from 'vitest';
@@ -6,8 +5,6 @@ import { expect, test } from 'vitest';
 import { generate } from '../src/index';
 
 test('should generate a matching document', async () => {
-  const now = await generate(path.resolve(__dirname, 'petstore.json'), {});
-  expect(now).toMatch(
-    fs.readFileSync(path.resolve(__dirname, '__snapshots__/petstore.snap'), 'utf8'),
-  );
+  const types = await generate(path.resolve(__dirname, 'petstore.json'), {});
+  expect(types).toMatchSnapshot();
 });
