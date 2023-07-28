@@ -4,7 +4,7 @@
   "description": "A version of openapi-typescript that also generates enumerations",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "bin": "build/bin/openapi-typescript-enum.js",
+  "bin": "build/bin/index.js",
   "author": "Max Metral <developers@pyralis.com>",
   "license": "MIT",
   "packageManager": "yarn@3.6.1",
