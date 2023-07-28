@@ -30,3 +30,4 @@ jest.config.js
 .prettierrc.js
 .eslintrc.js
 .commitlintrc.json
+vitest.config.ts

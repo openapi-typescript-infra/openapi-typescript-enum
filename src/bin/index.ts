@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-
-import fs from 'node:fs';
+import fs from 'fs';
 import path from 'path';
-import { URL } from 'node:url';
 
 import c from 'ansi-colors';
 import glob from 'fast-glob';
+// eslint-disable-next-line import/order -- what the actual heck, this rule bounces
 import parser from 'yargs-parser';
 
 // @ts-expect-error ESM is a threat to humanity
@@ -126,7 +125,10 @@ async function generateSchema(pathToSpec: string | typeof process.stdin) {
       const originalOutputFilePath = outputFilePath;
       outputFilePath = new URL(filename, originalOutputFilePath);
       if (outputFilePath.protocol !== 'file:') {
-        outputFilePath = new URL(outputFilePath.host.replace(EXT_RE, '.ts'), originalOutputFilePath);
+        outputFilePath = new URL(
+          outputFilePath.host.replace(EXT_RE, '.ts'),
+          originalOutputFilePath,
+        );
       }
     }
 
@@ -134,7 +136,11 @@ async function generateSchema(pathToSpec: string | typeof process.stdin) {
 
     const timeEnd = process.hrtime(timeStart);
     const time = timeEnd[0] + Math.round(timeEnd[1] / 1e6);
-    console.log(`🚀 ${c.green(`${pathToSpec} → ${c.bold(outputFilePath.toString())}`)} ${c.dim(`[${time}ms]`)}`);
+    console.log(
+      `🚀 ${c.green(`${pathToSpec} → ${c.bold(outputFilePath.toString())}`)} ${c.dim(
+        `[${time}ms]`,
+      )}`,
+    );
   } else {
     process.stdout.write(result);
     // if stdout, (still) don’t log anything to console!
@@ -148,7 +154,9 @@ async function main() {
     console.info(HELP);
     process.exit(0);
   }
-  const packageJSON = JSON.parse(fs.readFileSync(path.join(__dirname, '../../package.json'), 'utf8'));
+  const packageJSON = JSON.parse(
+    fs.readFileSync(path.join(__dirname, '../../package.json'), 'utf8'),
+  );
   if ('version' in flags) {
     console.info(`v${packageJSON.version}`);
     process.exit(0);
@@ -158,7 +166,8 @@ async function main() {
   const outputFile = new URL(flags.output, CWD);
   const outputDir = new URL('.', outputFile);
 
-  if (output === OUTPUT_FILE) console.info(`✨ ${c.bold(`openapi-typescript ${packageJSON.version}`)}`); // only log if we’re NOT writing to stdout
+  if (output === OUTPUT_FILE)
+    console.info(`✨ ${c.bold(`openapi-typescript ${packageJSON.version}`)}`); // only log if we’re NOT writing to stdout
 
   const pathToSpec = flags._[0] as string;
 
@@ -182,12 +191,19 @@ async function main() {
 
   // error: no matches for glob
   if (inputSpecPaths.length === 0) {
-    error(`Could not find any specs matching "${pathToSpec}". Please check that the path is correct.`);
+    error(
+      `Could not find any specs matching "${pathToSpec}". Please check that the path is correct.`,
+    );
     process.exit(1);
   }
 
   // error: tried to glob output to single file
-  if (isGlob && output === OUTPUT_FILE && fs.existsSync(outputDir) && fs.lstatSync(outputDir).isFile()) {
+  if (
+    isGlob &&
+    output === OUTPUT_FILE &&
+    fs.existsSync(outputDir) &&
+    fs.lstatSync(outputDir).isFile()
+  ) {
     error(`Expected directory for --output if using glob patterns. Received "${flags.output}".`);
     process.exit(1);
   }
@@ -198,13 +214,12 @@ async function main() {
       if (flags.output !== '.' && output === OUTPUT_FILE) {
         if (isGlob) {
           fs.mkdirSync(new URL(path.dirname(specPath), outputDir), { recursive: true }); // recursively make parent dirs
-        }
-        else {
+        } else {
           fs.mkdirSync(outputDir, { recursive: true }); // recursively make parent dirs
         }
       }
       await generateSchema(specPath);
-    })
+    }),
   );
 }
 
