@@ -665,7 +665,7 @@ export interface operations {
   };
 }
 
-export enum FindByStatusStatusEnum {
+export enum PetFindByStatusStatusEnum {
   \\"available\\" = \\"available\\",
   \\"pending\\" = \\"pending\\",
   \\"sold\\" = \\"sold\\"

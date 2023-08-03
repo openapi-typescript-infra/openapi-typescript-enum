@@ -18,7 +18,7 @@ export function error(msg: string) {
 }
 
 const HELP = `Usage
-  $ openapi-typescript [input] [options]
+  $ openapi-typescript-enum [input] [options]
 
 Options
   --help                       Display this

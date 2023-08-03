@@ -1,12 +1,15 @@
-// @ts-expect-error ESM is a threat to humanity
+// @ts-expect-error ESM is a threat to humanity. Once OATS exposes a working CJS, use it
 import type { OpenAPITSOptions } from 'openapi-typescript';
 
 function getEnumTitle(path: string) {
-  const parts =
-    path
-      .replace(/[^A-Za-z0-9/]/g, '/')
-      .match(/\/([^/]+)(?=\/parameters\/|$)/g)
-      ?.map((p) => p.slice(1)) ?? [];
+  const parts = path
+    .substring('#/paths//'.length)
+    .split(/\/parameters\//)
+    .join('/')
+    .split('/');
+  if (parts?.[0].match(/v[0-9]+/)) {
+    parts.shift();
+  }
   return `${parts.map((p) => p.charAt(0).toUpperCase() + p.slice(1)).join('')}`;
 }
 
