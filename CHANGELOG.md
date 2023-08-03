@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.0.0...v2.0.1) (2023-08-03)
+
+
+### Bug Fixes
+
+* **enum:** redo fix that removes special characters ([13d7d67](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/13d7d67c32aa17e9e2c3747cf12b9490ce405de6))
+
 # [2.0.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.1.1...v2.0.0) (2023-08-03)
 
 
