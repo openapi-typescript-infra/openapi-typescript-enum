@@ -1,3 +1,21 @@
+# [2.0.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.1.1...v2.0.0) (2023-08-03)
+
+
+### Bug Fixes
+
+* **enumeration:** correct enumeration naming ([c815d6a](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/c815d6a49a699d8be880577da08e8a7c59b33fe8))
+
+
+### BREAKING CHANGES
+
+* **enumeration:** The naming conventions for enumerations
+within the package have been updated to avoid conflicts in most cases.
+Previously, only the field name was used for the enumeration included
+in a path specification (components were fine). Now it includes all
+elements of the path, other than any "v(\d+)" prefix and
+other than the word "parameters." At some point this should be improved
+to just exclude the real "parameters" component of the schema.
+
 ## [1.1.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v1.1.0...v1.1.1) (2023-07-28)
 
 
