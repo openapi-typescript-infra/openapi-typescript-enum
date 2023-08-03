@@ -6,6 +6,7 @@ function getEnumTitle(path: string) {
     .substring('#/paths//'.length)
     .split(/\/parameters\//)
     .join('/')
+    .replace(/[^A-Za-z0-9/]/g, '/')
     .split('/');
   if (parts?.[0].match(/v[0-9]+/)) {
     parts.shift();
