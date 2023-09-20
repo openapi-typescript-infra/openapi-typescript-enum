@@ -1,3 +1,11 @@
+## [2.1.2](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.1...v2.1.2) (2023-09-20)
+
+
+### Bug Fixes
+
+* **exports:** I think testing does not visit the copied CLI ([3768bee](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/3768beeebc2b05bc2bd3e18cb61d6ae54a1ea31d))
+* **lint:** use colors in a way that pleases the linter ([ce38de1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/ce38de1da778e36a9b17116efbb459c3fa37ea5a))
+
 ## [2.1.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.0...v2.1.1) (2023-09-20)
 
 
