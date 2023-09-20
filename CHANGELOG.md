@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.0...v2.1.1) (2023-09-20)
+
+
+### Bug Fixes
+
+* **esm:** use import.meta in ESM instead of __dirname ([4597c3b](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/4597c3bd800f24173fd6fa057527036b4e879ece))
+
 # [2.1.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.0.1...v2.1.0) (2023-09-20)
 
 
