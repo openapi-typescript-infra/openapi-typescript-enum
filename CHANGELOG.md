@@ -1,3 +1,10 @@
+## [2.1.4](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.3...v2.1.4) (2023-09-20)
+
+
+### Bug Fixes
+
+* **esm:** impolite to curse in a git commit ([0a0603b](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/0a0603b980f525958051dbed680351f85482eb0e))
+
 ## [2.1.3](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.2...v2.1.3) (2023-09-20)
 
 
