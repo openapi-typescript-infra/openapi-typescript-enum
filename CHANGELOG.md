@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.0.1...v2.1.0) (2023-09-20)
+
+
+### Features
+
+* **esm:** move to ESM for compatibility and get latest openapi-typescript ([6d0fad1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/6d0fad1e1ede0feb0777712002dd0aaff5772d90))
+
 ## [2.0.1](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.0.0...v2.0.1) (2023-08-03)
 
 
