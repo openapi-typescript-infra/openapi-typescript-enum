@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import * as url from 'url';
 
-import colors from 'ansi-colors';
+import * as colors from 'ansi-colors';
 import { glob } from 'fast-glob';
 // eslint-disable-next-line import/order -- what the actual heck, this rule bounces
 import parser from 'yargs-parser';
@@ -12,12 +12,11 @@ import type { OpenAPITSOptions } from 'openapi-typescript';
 
 import { generate } from '../index.js';
 
-const { bold, red, green, dim } = colors;
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 /** print error message */
 export function error(msg: string) {
-  console.error(red(` ✘  ${msg}`)); // eslint-disable-line no-console
+  console.error(colors.red(` ✘  ${msg}`)); // eslint-disable-line no-console
 }
 
 const HELP = `Usage
@@ -140,7 +139,9 @@ async function generateSchema(pathToSpec: string | typeof process.stdin) {
     const timeEnd = process.hrtime(timeStart);
     const time = timeEnd[0] + Math.round(timeEnd[1] / 1e6);
     console.log(
-      `🚀 ${green(`${pathToSpec} → ${bold(outputFilePath.toString())}`)} ${dim(`[${time}ms]`)}`,
+      `🚀 ${colors.green(`${pathToSpec} → ${colors.bold(outputFilePath.toString())}`)} ${colors.dim(
+        `[${time}ms]`,
+      )}`,
     );
   } else {
     process.stdout.write(result);
@@ -168,7 +169,7 @@ async function main() {
   const outputDir = new URL('.', outputFile);
 
   if (output === OUTPUT_FILE)
-    console.info(`✨ ${bold(`openapi-typescript ${packageJSON.version}`)}`); // only log if we’re NOT writing to stdout
+    console.info(`✨ ${colors.bold(`openapi-typescript ${packageJSON.version}`)}`); // only log if we’re NOT writing to stdout
 
   const pathToSpec = flags._[0] as string;
 
