@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 import * as url from 'url';
 
-import { bold, red, green, dim } from 'ansi-colors';
+import colors from 'ansi-colors';
 import { glob } from 'fast-glob';
 // eslint-disable-next-line import/order -- what the actual heck, this rule bounces
 import parser from 'yargs-parser';
@@ -12,6 +12,7 @@ import type { OpenAPITSOptions } from 'openapi-typescript';
 
 import { generate } from '../index.js';
 
+const { bold, red, green, dim } = colors;
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 /** print error message */
