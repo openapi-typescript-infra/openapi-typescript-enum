@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.2...v2.1.3) (2023-09-20)
+
+
+### Bug Fixes
+
+* **esm:** have I said how much I hate the ESM transition... ([73014fe](https://github.com/openapi-typescript-infra/openapi-typescript-enum/commit/73014fe165e0f2e03a06c6731a74272023c2c29a))
+
 ## [2.1.2](https://github.com/openapi-typescript-infra/openapi-typescript-enum/compare/v2.1.1...v2.1.2) (2023-09-20)
 
 

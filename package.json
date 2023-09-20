@@ -1,6 +1,6 @@
 {
   "name": "@openapi-typescript-infra/openapi-typescript-enum",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "A version of openapi-typescript that also generates enumerations",
   "main": "build/index.js",
   "types": "build/index.d.ts",
