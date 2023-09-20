@@ -4,7 +4,7 @@ import path from 'path';
 import * as url from 'url';
 
 import * as colors from 'ansi-colors';
-import * as fastglob from 'fast-glob';
+import fastGlob from 'fast-glob';
 // eslint-disable-next-line import/order -- what the actual heck, this rule bounces
 import parser from 'yargs-parser';
 
@@ -188,7 +188,8 @@ async function main() {
   }
 
   // handle local schema(s)
-  const inputSpecPaths = await fastglob.glob(pathToSpec);
+  // eslint-disable-next-line import/no-named-as-default-member
+  const inputSpecPaths = await fastGlob.glob(pathToSpec);
   const isGlob = inputSpecPaths.length > 1;
 
   // error: no matches for glob
