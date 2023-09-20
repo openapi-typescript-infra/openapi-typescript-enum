@@ -247,6 +247,8 @@ export interface components {
   pathItems: never;
 }
 
+export type $defs = Record<string, never>;
+
 export type external = Record<string, never>;
 
 export interface operations {
@@ -273,11 +275,17 @@ export interface operations {
         };
       };
       /** @description Invalid ID supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description Pet not found */
-      404: never;
+      404: {
+        content: never;
+      };
       /** @description Validation exception */
-      405: never;
+      405: {
+        content: never;
+      };
     };
   };
   /**
@@ -302,7 +310,9 @@ export interface operations {
         };
       };
       /** @description Invalid input */
-      405: never;
+      405: {
+        content: never;
+      };
     };
   };
   /**
@@ -325,7 +335,9 @@ export interface operations {
         };
       };
       /** @description Invalid status value */
-      400: never;
+      400: {
+        content: never;
+      };
     };
   };
   /**
@@ -348,7 +360,9 @@ export interface operations {
         };
       };
       /** @description Invalid tag value */
-      400: never;
+      400: {
+        content: never;
+      };
     };
   };
   /**
@@ -371,9 +385,13 @@ export interface operations {
         };
       };
       /** @description Invalid ID supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description Pet not found */
-      404: never;
+      404: {
+        content: never;
+      };
     };
   };
   /** Updates a pet in the store with form data */
@@ -392,7 +410,9 @@ export interface operations {
     };
     responses: {
       /** @description Invalid input */
-      405: never;
+      405: {
+        content: never;
+      };
     };
   };
   /** Deletes a pet */
@@ -408,7 +428,9 @@ export interface operations {
     };
     responses: {
       /** @description Invalid pet value */
-      400: never;
+      400: {
+        content: never;
+      };
     };
   };
   /** uploads an image */
@@ -447,7 +469,7 @@ export interface operations {
       200: {
         content: {
           \\"application/json\\": {
-            [key: string]: number | undefined;
+            [key: string]: number;
           };
         };
       };
@@ -473,7 +495,9 @@ export interface operations {
         };
       };
       /** @description Invalid input */
-      405: never;
+      405: {
+        content: never;
+      };
     };
   };
   /**
@@ -496,9 +520,13 @@ export interface operations {
         };
       };
       /** @description Invalid ID supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description Order not found */
-      404: never;
+      404: {
+        content: never;
+      };
     };
   };
   /**
@@ -514,9 +542,13 @@ export interface operations {
     };
     responses: {
       /** @description Invalid ID supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description Order not found */
-      404: never;
+      404: {
+        content: never;
+      };
     };
   };
   /**
@@ -561,7 +593,9 @@ export interface operations {
         };
       };
       /** @description successful operation */
-      default: never;
+      default: {
+        content: never;
+      };
     };
   };
   /** Logs user into the system */
@@ -589,14 +623,18 @@ export interface operations {
         };
       };
       /** @description Invalid username/password supplied */
-      400: never;
+      400: {
+        content: never;
+      };
     };
   };
   /** Logs out current logged in user session */
   logoutUser: {
     responses: {
       /** @description successful operation */
-      default: never;
+      default: {
+        content: never;
+      };
     };
   };
   /** Get user by user name */
@@ -616,9 +654,13 @@ export interface operations {
         };
       };
       /** @description Invalid username supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description User not found */
-      404: never;
+      404: {
+        content: never;
+      };
     };
   };
   /**
@@ -642,7 +684,9 @@ export interface operations {
     };
     responses: {
       /** @description successful operation */
-      default: never;
+      default: {
+        content: never;
+      };
     };
   };
   /**
@@ -658,9 +702,13 @@ export interface operations {
     };
     responses: {
       /** @description Invalid username supplied */
-      400: never;
+      400: {
+        content: never;
+      };
       /** @description User not found */
-      404: never;
+      404: {
+        content: never;
+      };
     };
   };
 }

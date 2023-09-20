@@ -31,3 +31,5 @@ jest.config.js
 .eslintrc.js
 .commitlintrc.json
 vitest.config.ts
+.eslintrc.cjs
+.prettierrc.cjs

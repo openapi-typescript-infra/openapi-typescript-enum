@@ -1,4 +1,3 @@
-// @ts-expect-error ESM is a threat to humanity. Once OATS exposes a working CJS, use it
 import type { OpenAPITSOptions } from 'openapi-typescript';
 
 function getEnumTitle(path: string) {

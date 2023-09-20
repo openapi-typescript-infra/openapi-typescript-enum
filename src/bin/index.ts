@@ -7,10 +7,9 @@ import glob from 'fast-glob';
 // eslint-disable-next-line import/order -- what the actual heck, this rule bounces
 import parser from 'yargs-parser';
 
-// @ts-expect-error ESM is a threat to humanity
 import type { OpenAPITSOptions } from 'openapi-typescript';
 
-import { generate } from '../index';
+import { generate } from '../index.js';
 
 /** print error message */
 export function error(msg: string) {
